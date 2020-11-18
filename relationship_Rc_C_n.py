@@ -26,7 +26,7 @@ if info == "Rc":
     C = float(C)
     if C < 0.0 or C > 1.0:
         C = enterIfValueNegOrMore1(C, "Confidence (C)")
-    n = int(n)
+    n = abs(int(n))
     Rc = math.pow((1 - C), 1 / n)
     print("Reliability at confidence (Rc): ", round(Rc, 2), "%")
 
@@ -39,7 +39,7 @@ if info == "C":
     Rc = float(Rc)
     if Rc < 0.0 or Rc > 1.0:
         Rc = enterIfValueNegOrMore1(Rc, "Reliability at confidence (Rc)")
-    n = int(n)
+    n = abs(int(n))
     # print(Rc**(n+1))
     # print(math.pow(Rc,n+1))
     C = 1 - math.pow(Rc, n + 1)
